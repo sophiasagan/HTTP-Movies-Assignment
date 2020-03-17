@@ -39,7 +39,7 @@ const UpdateForm = props => {
         axios
             .put(`http://localhost:5000/api/movies/${id}`, movie)
             .then(res => {
-                props.refreshMovies();
+                setMovie(initialState); // Clear form after submit
                 props.history.push('/');
             })
             .catch(err => console.log(err))

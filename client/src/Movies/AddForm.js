@@ -33,11 +33,11 @@ const AddForm = props => {
         }
     };
 
-    const handleChange = event =>
-        setMovie({ ...movie, [event.target.name]: event.target.value });
+    const handleChange = e =>
+        setMovie({ ...movie, [e.target.name]: e.target.value });
 
-    const handleSubmit = event => {
-        event.preventDefault();
+    const handleSubmit = e => {
+        e.preventDefault();
         if (!id) {
             //Send a POST request if params.match.id does not exist
             axios
@@ -105,7 +105,6 @@ const AddForm = props => {
                                 })
                             }
                         >
-                            &#x1f5d1;
                 </span>
                     </span>
                 ))}
@@ -126,7 +125,7 @@ const AddForm = props => {
                         Add
             </button>
                 </label>
-                <button type="submit">{id ? "Update Movie" : "Add Movie"}</button>
+                <button type="submit">Add Movie</button>
             </form>
         </div>
     );

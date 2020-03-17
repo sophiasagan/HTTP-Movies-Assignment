@@ -38,7 +38,6 @@ function Movie(props, { addToSavedList }) {
     axios
       .delete(`http://localhost:5000/api/movies/${movie.id}`)
       .then(res=> {
-        props.refreshMovies();
         props.history.push('/')
       })
       .catch(err => console.log(err))
